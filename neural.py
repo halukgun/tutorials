@@ -55,8 +55,8 @@ plt.xlabel('epoch')
 plt.ylabel('loss')
 
 def plot_boundary(X,Y):
-    x_span=np.linspace(min(X[:,0]),max(X[:,0]))
-    y_span=np.linspace(min(X[:,1]),max(X[:,1]))
+    x_span=np.linspace(min(X[:,0])-0.25,max(X[:,0])+0.25)
+    y_span=np.linspace(min(X[:,1])-0.25,max(X[:,1])+0.25)
     x1,y1=np.meshgrid(x_span,y_span)#50x50 arrays
     grid=torch.Tensor(np.c_[x1.ravel(),y1.ravel()])#concatenation by column wise these arrays
     pred_func=model.forward(grid)
